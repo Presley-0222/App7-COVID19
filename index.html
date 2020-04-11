@@ -35,6 +35,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+	
+// The following code lets you know when the file was last modified.
+// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
+	
+
         var allergy_count = 0;
         var cold_count = 0;
 	
@@ -97,12 +106,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">  <!--This creates a header for the page and defines its type/appearance.-->
-	<h1>Cold or Allergies?</h1>    <!--This is the header of the first/home page. -->
+<div id="header" class="w3-container w3-flat-emerald">  <!--This creates a header for the page and defines its type/appearance.-->
+	<h1>COVID-19 or Other?</h1>    <!--This is the header of the first/home page. -->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Is it COVID-19, Allergies, a Cold, or the Flu. Answer a few short questions to find out!</p>
 	<!--between the <p> and the <p> above is the first question on the home/introduction page --> 
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>  <!-- this creates a grey and round button that syas "Get Started" and takes you to the next page when clicked -->
@@ -118,17 +127,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">   <!--This line seperates the next line from the header and creates a new area for it -->
         <p>Are your eyes watery or itchy?</p>  <!-- This line creates the question, "Are your eyes watery or itchy? -->
-		<button onclick="allergyAdd();">Yes</button>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of allergy symptoms-->
-		<button onclick="coldAdd();">No</button>     <!--This creates a button that says no, and when you click it, it adds to the total count of cold symptoms -->
-		<p>
-			</p>
-		<a href="#two" class="w3-btn w3-black"> Next </a>   <!-- This creates a "Next" button that once clicked will take the user to page two -->
-		<p>
-			
-		<p>
-			
-			<p>
-	<p>The buttons will not change color when you click them, just click an answer once and then click the next button</p>   <!--This adds a line of text below the next button hat tells readers the buttons will not changed color when clicked and should just be clicked once before hitting the "Next" button -->
+		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of allergy symptoms-->
+		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black w3-round">No</a>     <!--This creates a button that says no, and when you click it, it adds to the total count of cold symptoms -->
     	</div>
 </div>
 
@@ -139,11 +139,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header -->
 		<p>Do you have a fever?</p>   <!--This adds the question "Do you have a fever?" to the context section -->
-		<button onclick="coldAdd();">Yes</button>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of cold symptoms-->
-		<button onclick="allergyAdd();">No</button>  <!-- This creates a button that says no, and when you click it, it adds to the total count of allergy symptoms-->
-		<p>
-			</p>
-		<a href="#three" class="w3-btn w3-black"> Next </a>   <!-- This creates a "Next" button that once clicked will take the user to page three -->
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of cold symptoms-->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black w3-round">No</a>  <!-- This creates a button that says no, and when you click it, it adds to the total count of allergy symptoms-->
+		
 	</div>
 </div>	
 	
@@ -155,11 +153,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you have a sore throat?</p>   <!--This adds the question "Do you have a sore throat?" to the context section -->
-		<button onclick="coldAdd();">Yes</button>  <!--Creates a button called "Yes" that counts towards cold when clicked-->
-		<button onclick="allergyAdd();">No</button>  <!--Creates a button called "No" that counts towards allergy when clicked-->
-		<p>
-			</p>
-		<a href="#four" class="w3-btn w3-black"> Next </a>     <!-- This creates a "Next" button that once clicked will take the user to page four -->
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes</a>  <!--Creates a button called "Yes" that counts towards cold when clicked-->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black w3-round">No</a>  <!--Creates a button called "No" that counts towards allergy when clicked-->
+		
 	</div>
 </div>	
 	
@@ -170,11 +166,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are your symptoms seasonal or chronic?</p>    <!--This adds the question "Are your symptoms seasonal or chronic?" to the context section -->
-		<button onclick="allergyAdd();">Seasonal</button>   <!--Creates a button called "Seasonal" that counts towards allergy when clicked-->
-		<button onclick="coldAdd();">Chronic</button>   <!--Creates a button called "Chronic" that counts towards cold when clicked-->
-		<p>
-			</p>
-		<a href="#five" class="w3-btn w3-black"> Next </a>     <!-- This creates a "Next" button that once clicked will take the user to page five -->
+		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black w3-round">Seasonal</a>   <!--Creates a button called "Seasonal" that counts towards allergy when clicked-->
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-black w3-round">Chronic</a>   <!--Creates a button called "Chronic" that counts towards cold when clicked-->
+		
 	</div>
 </div>	
 	
@@ -185,11 +179,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you have body aches and pains?</p>    <!--This adds the question "Do you have body aches and pains?" to the context section -->
-		<button onclick="coldAdd();">Yes</button>   <!--Creates a button called "Yes" that counts towards cold when clicked-->
-		<button onclick="allergyAdd();">No</button>   <!--Creates a button called "No" that counts towards allergy when clicked-->
-		<p>
-			</p>
-		<a href="#six" class="w3-btn w3-black"> Next </a>    <!-- This creates a "Next" button that once clicked will take the user to page six -->
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Yes" that counts towards cold when clicked-->
+		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "No" that counts towards allergy when clicked-->
+		
 	</div>
 </div>	
 	
@@ -200,11 +192,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">     <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Is the weather warm or chilly?</p>     <!--This adds the question "Is the weather warm or chilly?" to the context section -->
-		<button onclick="coldAdd();">Chilly</button>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
-		<button onclick="allergyAdd();">Warm</button>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
-		<p>
-			</p>
-		<a href="#seven" class="w3-btn w3-black"> Next </a>     <!-- This creates a "Next" button that once clicked will take the user to page seven -->
+		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black w3-round">Chilly</a>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
+		<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black w3-round">Warm</a>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
+		
 	</div>
 </div>	
 	
@@ -215,11 +205,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Did your symptoms develop fast or slow?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<button onclick="allergyAdd();">Fast</button>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<button onclick="coldAdd();">Slow</button>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
-		<p>
-			</p>
-		<a href="#eight" class="w3-btn w3-black"> Next </a>     <!-- This creates a "Next" button that once clicked will take the user to page eight -->
+		<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-black w3-round">Fast</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
+		<a href="#eight" onclick="coldAdd();" class="w3-btn w3-black w3-round">Slow</a>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
+		
 	</div>
 </div>	
 			
@@ -231,7 +219,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<!--This is the result! -->
-		<button onclick= "showResults();"class="w3-btn w3-black">Click to get Results</button>   <!--Creates a button called "Results" that once clicked will give you the percentage chance you have a cold or its allergies based o your answers to the previous questions-->
+		<a onclick= "showResults();"class="w3-btn w3-black">Click to get Results</a>   <!--Creates a button called "Results" that once clicked will give you the percentage chance you have a cold or its allergies based o your answers to the previous questions-->
 		<p id="results">Results Here</p>   <!--This is where the results from our earlier function are displayed -->
 		
 		
