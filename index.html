@@ -48,23 +48,75 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var cold_count = 0;
 	var flu_count = 0;
 	var covid_count = 0;	
-	var total = 7;   //These are the variables to calculate the count and the percentages in the following functions.
+	var total = 11;   //These are the variables to calculate the count and the percentages in the following functions.
 	
 
-        function allergyAdd(){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
-            allergy_count = allergy_count + 1;
+        function allergyAdd(var point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
+            switch (point){
+		    case "1":
+			allergy_count = allergy_count + 1;
+			    break;
+		    case "0.75":
+			allergy_count = allergy_count + 0.75;
+			    break;
+		    case "0.5":
+			allergy_count = allery_count + 0.5;
+			    break;
+		    case "0.25":
+			allergy_count = allergy_count + 0.25;
+			    break;
+	    }
         }	     
 
-        function coldAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            cold_count = cold_count + 1;
+        function coldAdd(var point2){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+           switch (point2){
+		    case "1":
+			cold_count = cold_count + 1;
+			    break;
+		   case "0.75":
+			cold_count = cold_count + 0.75;
+			    break;
+		    case "0.5":
+			cold_count = cold_count + 0.5;
+			    break;
+		    case "0.25":
+			cold_count = cold_count + 0.25;
+			    break;
+	    }
         }
 	
-	function fluAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            flu_count = flu_count + 1;
+	function fluAdd(var point3){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            switch (point3){
+		    case "1":
+			flu_count = flu_count + 1;
+			    break;
+		    case "0.75":
+			flu_count = flu_count + 0.75;
+			    break;
+		    case "0.5":
+			flu_count = flu_count + 0.5;
+			    break;
+		    case "0.25":
+			flu_count = flu_count + 0.25;
+			    break;
+	    }
         }
 	
-	function covidAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            covid_count = covid_count + 1;	
+	function covidAdd(var point4){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            switch (point4){
+		    case "1":
+			covid_count = covid_count + 1;
+			    break;
+		    case "0.75":
+			covid_count = covid_count + 0.75;
+			    break;
+		    case "0.5":
+			covid_count = covid_count + 0.5;
+			    break;
+		    case "0.25":
+			covid_count = covid_count + 0.25;
+			    break;
+	    }	
         }
 	
 	
@@ -149,10 +201,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container">   <!--This line seperates the next line from the header and creates a new area for it -->
         	<p>How long have you been feeling ill?</p>  <!-- This line creates the question, "Are your eyes watery or itchy? -->
-		<a href="#two" onclick="covidAdd();" class="w3-btn w3-black w3-round">7-25 Days</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of allergy symptoms-->
-		<a href="#two" onclick="coldAdd();" class="w3-btn w3-black w3-round">Less than 14 Days</a>     <!--This creates a button that says no, and when you click it, it adds to the total count of cold symptoms -->
-    		<a href="#two" onclick="fluAdd();" class="w3-btn w3-black w3-round">7-14 Days</a>
-		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black w3-round">Several Weeks</a>
+		<a href="#two" onclick="covidAdd(1);" class="w3-btn w3-black w3-round">7-25 Days</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of allergy symptoms-->
+		<a href="#two" onclick="coldAdd(1);" class="w3-btn w3-black w3-round">Less than 14 Days</a>     <!--This creates a button that says no, and when you click it, it adds to the total count of cold symptoms -->
+    		<a href="#two" onclick="fluAdd(1);" class="w3-btn w3-black w3-round">7-14 Days</a>
+		<a href="#two" onclick="allergyAdd(1);" class="w3-btn w3-black w3-round">Several Weeks</a>
 	</div>
 </div>
 
@@ -163,9 +215,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header -->
 		<p>Have you been coughing? If so, what kind?</p>   <!--This adds the question "Do you have a fever?" to the context section -->
-		<a href="#three" onclick="covidAdd(); fluAdd();" class="w3-btn w3-black w3-round">Yes (dry)</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of cold symptoms-->
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes (mild)</a>  <!-- This creates a button that says no, and when you click it, it adds to the total count of allergy symptoms-->
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#three" onclick="covidAdd(1); fluAdd(1); allergyAdd(0.25);" class="w3-btn w3-black w3-round">Yes (dry)</a>   <!-- This creates a button that says yes, and when you click it, it adds to the total count of cold symptoms-->
+		<a href="#three" onclick="coldAdd(1);" class="w3-btn w3-black w3-round">Yes (mild)</a>  <!-- This creates a button that says no, and when you click it, it adds to the total count of allergy symptoms-->
+		<a href="#three" onclick="allergyAdd(0.75);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 	
@@ -177,8 +229,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing shortness of breath?</p>   <!--This adds the question "Do you have a sore throat?" to the context section -->
-		<a href="#four" onclick="covidAdd();" class="w3-btn w3-black w3-round">Yes</a>  <!--Creates a button called "Yes" that counts towards cold when clicked-->
-		<a href="#four" onclick="coldAdd(); fluAdd(); allergyAdd();" class="w3-btn w3-black w3-round">No</a>  <!--Creates a button called "No" that counts towards allergy when clicked-->
+		<a href="#four" onclick="covidAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>  <!--Creates a button called "Yes" that counts towards cold when clicked-->
+		<a href="#four" onclick="coldAdd(1); fluAdd(1); allergyAdd(1); covidAdd(0.5);" class="w3-btn w3-black w3-round">No</a>  <!--Creates a button called "No" that counts towards allergy when clicked-->
 		
 	</div>
 </div>	
@@ -190,8 +242,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Have you been sneezing often?</p>    <!--This adds the question "Are your symptoms seasonal or chronic?" to the context section -->
-		<a href="#five" onclick="allergyAdd(); coldAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Seasonal" that counts towards allergy when clicked-->
-		<a href="#five" onclick="covidAdd(); fluAdd();" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Chronic" that counts towards cold when clicked-->
+		<a href="#five" onclick="allergyAdd(1); coldAdd(1);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Seasonal" that counts towards allergy when clicked-->
+		<a href="#five" onclick="covidAdd(1); fluAdd(1);" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Chronic" that counts towards cold when clicked-->
 		
 	</div>
 </div>	
@@ -203,8 +255,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you have a runny or stuffy nose?</p>    <!--This adds the question "Do you have body aches and pains?" to the context section -->
-		<a href="#six" onclick="coldAdd(); allergyAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Yes" that counts towards cold when clicked-->
-		<a href="#six" onclick="covidAdd(); fluAdd();" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "No" that counts towards allergy when clicked-->
+		<a href="#six" onclick="coldAdd(1); allergyAdd(1); covidAdd(0.25); fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Yes" that counts towards cold when clicked-->
+		<a href="#six" onclick="covidAdd(0.75); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "No" that counts towards allergy when clicked-->
 		
 	</div>
 </div>	
@@ -216,8 +268,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">     <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you have a sore throat?</p>     <!--This adds the question "Is the weather warm or chilly?" to the context section -->
-		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
-		<a href="#seven" onclick="allergyAdd(); covidAdd(); fluAdd();" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
+		<a href="#seven" onclick="coldAdd(1); allergyAdd(0.25); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
+		<a href="#seven" onclick="allergyAdd(0.25); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
 		
 	</div>
 </div>	
@@ -229,9 +281,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing or have you experienced a fever?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<a href="#eight" onclick="covidAdd(); fluAdd();" class="w3-btn w3-black w3-round">Yes, a prolonged fever</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<a href="#eight" onclick="coldAdd();" class="w3-btn w3-black w3-round">Yes, a short fever period</a>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
-		<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#eight" onclick="covidAdd(1); fluAdd(1);" class="w3-btn w3-black w3-round">Yes, a prolonged fever</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
+		<a href="#eight" onclick="coldAdd(1);" class="w3-btn w3-black w3-round">Yes, a short fever period</a>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
+		<a href="#eight" onclick="allergyAdd(1);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 	
@@ -242,8 +294,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you feel tired or weak?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<a href="#nine" onclick="fluAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
-		<a href="#nine" onclick="coldAdd(); allergyAdd(); covid();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#nine" onclick="fluAdd(1);  allergyAdd(0.5); covidAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Slow" that counts towards cold when clicked-->
+		<a href="#nine" onclick="coldAdd(1); allergyAdd(0.5); covidAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 	
@@ -254,8 +306,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing headaches?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<a href="#ten" onclick="fluAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<a href="#ten" onclick="coldAdd(); covidAdd(); allergyAdd();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#ten" onclick="fluAdd(1); coldAdd(0.25); covidAdd(0.5); allergyAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
+		<a href="#ten" onclick="coldAdd(0.75); covidAdd(0.5); allergyAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 	
@@ -266,8 +318,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing body aches and pains?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<a href="#eleven" onclick="coldAdd(); fluAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<a href="#eleven" onclick="allergyAdd(); covidAdd();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#eleven" onclick="coldAdd(1); fluAdd(1); covidAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
+		<a href="#eleven" onclick="allergyAdd(1); covidAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 	
@@ -278,8 +330,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing diarrhea?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
-		<a href="#twelve" onclick="fluAdd(); covidAdd();" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<a href="#twelve" onclick="coldAdd(); allergyAdd();" class="w3-btn w3-black w3-round">No</a>
+		<a href="#twelve" onclick=" covidAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
+		<a href="#twelve" onclick="coldAdd(1); allergyAdd(1);covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
+		<a href="#twelve" onclick="fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes (and the one sick is a child)</a>
 	</div>
 </div>	
 			
