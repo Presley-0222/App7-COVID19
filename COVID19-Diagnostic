@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Presley Jones
+Author 2
+ 
+Further Information:
+http://diystream.cns.utexas.edu/
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+To create a web-based diagnostic to evaluate the percent chance that a plant is the incredibly toxic hemlock or the edible wild carrot plant. In addition, the app works to inform users of the symptoms and ways to handle Hemlock overall.
+ 
+Known Issues:
+The footer will only appear on the last "Results" page and not at all on the mobile app.
+-->
+
+<!-- below, until <script>, is important information that is documented, but will not be displayed on the page-->
+   <head> 
+      
+	   <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+	
+// The following code lets you know when the file was last modified.
+// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
+
+	
+        var hemlock_count = 0;
+        var wildcarrot_count = 0;
+	
+	var total = 4;   //These are the variables to calculate the count and the percentages in the following functions.
+	
+
+        function hemlockAdd(){   // This function is used to record the count of characteristics that indicate a Hemlock plant from the user's button responses. Every time someone selects a Hemlock option, this function is used to add 1 to the total that is recorded.
+            hemlock_count = hemlock_count + 1;	
+        }
+
+	
+	
+        function wildcarrotAdd(){   // This function is used to record the count of characteristics that indicate a wild carrot plant from the user's button responses.
+            wildcarrot_count = wildcarrot_count + 1;
+        }
+	
+	
+	function hemlockPercent(){   // with this functions, we can calculate the liklyhood percentage of hemlock by dividing the count of each variable by four and then multiplying by 100.
+		hemlockPercent = (hemlock_count/4)*100;
+	}
+	
+	
+	function wildcarrotPercent(){   // This function does the same as the one above it, but it creates a percentage for likelyhood plant is wild carrot rather than hemlock.
+		wildcarrotPercent = (wildcarrot_count/4)*100;
+	}		
+	
+	
+	function showResults(){  // This function displays the percent hemlock and the percent wild carrot.
+		hemlockPercent();
+		wildcarrotPercent();
+		
+		var resultText = document.getElementById("results");
+	resultText.innerHTML = "Percent hemlock = " + hemlockPercent + "%" + "<br> Percent wild carrot = " + wildcarrotPercent + "%";
+		//The above line creates the words "Percent hemlock =" and then gives the percent generated from the hemlockPercent function and a percent sign, then there is a page break, and then the line "Percent wild carrot =" with the percent generated from the wildcarrotPercent function and a percent sign.
+	}
+// From the <style> marker to the </style> marker in the below section, this data creates the appearance and dimensions for the page, including the added dimensions for image size.
+  </script>
+	
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+  img, object{
+    max-height:50%;
+    max-width:50%;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-teal">  <!--This creates a header for the page and defines its type/appearance.-->
+	<h1>COVID-19 or other?</h1>    <!--This is the header of the first/home page. -->
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Is it COVID-19, Allergies, a Cold, or the Flu? Answer a few short questions to find out!</p>
+	<!--between the <p> and the <p> above is the first question on the home/introduction page --> 
+	
+	<a href="#one" class="w3-btn w3-grey w3-round w3-padding-16"> Get Started </a>  <!-- this creates a grey and round button that syas "Get Started" and takes you to the next page when clicked -->
+	
+	</div>
+		<img src="https://i.ibb.co/0Mk4Kx1/f9bb1d59-e8ab-42e1-9c1f-5c470fd2e129-Hemlock3.jpg" alt="Plant with white flowers"/>    <!-- this inserts an image or a line of text describing the image if the image cannot load-->
+	
+</div>
+
+<div id="content" class="w3-container w3-text-red">   <!-- this creates an area for a line of text and marks that the letters in this text will be red -->
+	<p> Mobile Phone Users: For best experience, turn phone screen horizonally. </p> <!-- This is a message to mobile phone users to turn their phones horizontally for the best experience.-->
+	
+	</div>
+
+	<!-- The below two statements create sentences on the home page that state that this app is for the purpose of the DIY stream at UT and should not be used to actually assess any medical condition and that UT is not liable -->
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
+	
+
+<div class="page" id="one">   <!-- This creates the next page and names it as "one" -->
+	<div id="header" class="w3-container w3-teal">    <!--This creates a header for the page and defines its type/appearance.-->
+		<h1>Question 1</h1>   <!-- This creates the header of this page titling it "Question 1" -->
+	</div>
+	
+    	<div id="content" class="w3-container">   <!--This line seperates the next line from the header and creates a new area for it -->
+        <p>Does the plant have hairy stems or stems with purple splotches?</p>  <!-- This line creates the question, "Does the plant have hairy stems or stems with purple splotches? -->
+		<a href="#two" onclick="wildcarrotAdd();" class="w3-btn w3-black w3-round">Hairy</a>   <!-- This creates a button that says "Hairy", and when you click it, it adds to the total count of the wild carrot characteristics and takes you to the next page-->
+		<a href="#two" onclick="hemlockAdd();"class="w3-btn w3-black w3-round">Purple splotches</a>    <!--This creates a button that says "Purple splotches", and when you click it, it adds to the total count of Hemlock characteristics and takes you to the next page-->
+	</div>   <!--The two lines of code below add two images/alternate text to this page -->
+		<img src="https://i.ibb.co/1nk722G/Stem-of-Queen-s-lace.jpg" alt="Stems with hair/threads"/>  
+		<img src="https://i.ibb.co/m6cd19M/Hemlock-stem.jpg" alt="Stem with purple splotches"/>
+	
+</div>
+
+<div class="page" id="two">   <!--This creates a page called "two"-->
+	<div class="w3-container w3-teal">    <!--This creates a header for the page and defines its type/appearance.-->
+		<h1>Question 2</h1>   <!--This creates a header called "Question 2" -->
+	</div>
+	
+	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header -->
+		<p>Do the flowers cluster together or branch out from one another?</p>   <!--This adds the question "Do the flowers cluster together or branch out from one another?" to the context section -->
+		<a href="#three" onclick="wildcarrotAdd();"class="w3-btn w3-black w3-round">Cluster together</a>   <!-- This creates a button that says "Cluster together, and when you click it, it adds to the total count of wild carrot characteristics and takes you to the next page-->
+		<a href="#three" onclick="hemlockAdd();"class="w3-btn w3-black w3-round">Branch out</a>  <!-- This creates a button that says "Branch out", and when you click it, it adds to the total count of hemlock characteristics and takes you to the next page-->
+	</div>    <!--The two lines of code below add two images/alternate text to this page -->
+		<img src="https://i.ibb.co/Zx81rdn/image-asset.jpg" alt="flowers clustered together"/>
+		<img src="https://i.ibb.co/rMSLdB6/IMG-5419.jpg" alt="flowers branching from one another"/>
+	
+</div>	
+	
+
+<div class="page" id="three">   <!--This creates a page called "three"-->
+	<div class="w3-container w3-teal">    <!--This creates a header for the page and defines its type/appearance.-->
+		<h1>Question 3</h1>   <!--This page is titled "Question 3" in its header -->
+	</div>
+	
+	<div id="content" class="w3-container">   <!--This creates a section seperate fom the header, a "content" section -->
+		<p>Are the undersides of the leaves hairy?</p>   <!--This adds the question "Are the undersides of the leaves hairy?" to the context section -->
+		<a href="#four" onclick="wildcarrotAdd();"class="w3-btn w3-black w3-round">Yes</a>  <!--Creates a button called "Yes" that counts towards wild carrot when clicked and then takes you to the next page-->
+		<a href="#four" onclick="hemlockAdd();"class="w3-btn w3-black w3-round">No</a>  <!--Creates a button called "No" that counts towards hemlock when clicked and then takes you to the next page-->
+		
+	</div>
+</div>	
+	
+	
+<div class="page" id="four">   <!--This creates a page called "four"-->
+	<div class="w3-container w3-teal">    <!--This creates a header for the page and defines its type/appearance.-->
+		<h1>Question 4</h1>   <!--This page is titled "Question 4" in its header -->
+	</div>
+	
+	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
+		<p>Is there a purple or redish colored flower in the center of the flower cluster?</p>    <!--This adds the question "Is there a purple or redish colored flower in the center of the flower cluster?" to the context section -->
+		<a href="#five" onclick="wildcarrotAdd();"class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Yes" that counts towards wild carrot count when clicked and then takes you to the next page-->
+		<a href="#five" onclick="hemlockAdd();"class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "No" that counts towards the hemlock count when clicked and then takes you to the next page-->
+		<!--The line of code below adds an image/alternate text to this page -->
+	</div>
+		<img src="https://i.ibb.co/Zz18Gpn/images-q-tbn-ANd9-Gc-Qzl9-Jd-Nh-Vi-ZSQXAWNRD4-Rt8-LOUFR8a-Mr-9-J6l2jiel-Kq-Tyq-Qju.jpg" alt="head of white flowers with small purple flower in the center"/>	 
+
+</div>	
+			
+<div class="page" id="five">   <!--This creates a page called "five"-->
+	<div id="header" class="w3-container w3-teal">    <!--This creates a header for the page and defines its type/appearance.-->
+		<h1>Results</h1>  <!--This page is titled "Results" in its header -->
+	
+	</div>
+	
+	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
+		<!--This is the result! -->
+		<button onclick= "showResults();"class="w3-btn w3-black">Click to get Results</button>   <!--Creates a button called "Results" that once clicked will give you the percentage chance the plant is Hemlock or Wild Carrot based on your answers to the previous questions-->
+		<p id="results">Results Here</p>   <!--This is where the results from our earlier function are displayed -->
+    
+	</div>
+		
+	<div id="content" class="w3-container"> <!-- This creates another "content section" -->
+		<!-- The three lines of text below give users further information about the symptoms of Hemlock poisoning, the issues with removing it, and some ways to go about removing it.-->
+		<p> Symptoms of Hemlock poisoning include: Trembling, Pupil dilation, Dizziness, Increased salivation, Weak Pulse, Central nervous system paralysis, Muscle paralysis, Respiratory failure, Loss of coordination, Como, or Death. </p>
+		<p> Hemlock is a very tricky plant to remove. If found, do not cut down or burn; That will only release the toxins of the plant which might then get into your eyes, nose, or mouth and cause the above side effects. The roots of a Hemlock must be fully destroyed in order for the plant to truly die, and even years after it's death, the toxins can still exist in its surroundings </p>
+		<p> Glyphosate infused herbicides are effective in killing poison hemlock, and if you must remove them personally, put the plant in a sealed garbage bag, let it bake in the sun and then throw the bag in the trash. It is safest to contact local specialist in removing the toxic plant. </p>
+		 
+     </div>
+</div>	
+	
+  <!-- This produces the footer of every page (or at least should), "DIY Coding Edition!" -->
+<footer class="w3-bottom w3-container w3-teal">
+	<p>DIY Coding Edition!</p>
+</footer>
+	   
+</body>
+</html>
