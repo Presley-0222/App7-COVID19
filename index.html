@@ -46,35 +46,57 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         var allergy_count = 0;
         var cold_count = 0;
-	
+	var flu_count = 0;
+	var COVID_count = 0;	
 	var total = 7;   //These are the variables to calculate the count and the percentages in the following functions.
 	
 
         function allergyAdd(){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
             allergy_count = allergy_count + 1;
-		
-
         }
 
         function coldAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
             cold_count = cold_count + 1;
-		
-	
         }
 	
+	function fluAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            flu_count = flu_count + 1;
+        }
+	
+	function COVIDAdd(){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            COVID_count = COVID_count + 1;	
+        }
+	
+	
+	
+			
 	function allergyPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
-		allergyPercent = (allergy_count/7)*100;
+		allergyPercent = (allergy_count/11)*100;
 	
 	}
 		
 	function coldPercent(){   // This function does the same as the one above it, but it creates a percentage for cold rather than allergy.
-		coldPercent = (cold_count/7)*100;
+		coldPercent = (cold_count/11)*100;
 	
-	}		
-		
+	}	
+	
+	function fluPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
+		fluPercent = (flu_count/11)*100;
+	
+	}
+	
+	function COVIDPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
+		COVIDPercent = (COVID_count/11)*100;
+	
+	}
+	
+	
+			
 	function showResults(){  // This function displays the percent cold and the percent allergy.
 		coldPercent();
 		allergyPercent();
+		fluPercent();
+		COVIDPercent();
 		
 		var resultText = document.getElementById("results");
 	resultText.innerHTML = "Percent allergy = " + allergyPercent + "%" + "<br> Percent cold = " + coldPercent + "%";
