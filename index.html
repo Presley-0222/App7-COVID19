@@ -49,7 +49,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var cold_count = 0;
 	var flu_count = 0;
 	var covid_count = 0;	
-	var total = 11;   //These are the variables to calculate the count and the percentages in the following functions.
+	var total_count = 0;   //These are the variables to calculate the count and the percentages in the following functions.
 	
 
         function allergyAdd(point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with allegies) to the total that is recorded.
@@ -120,26 +120,31 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    }	
         }
 	
+	 function totalAdd(){
+		 total_count = (allergy_count + flu_count + covid_count + cold_count);
+		 
+	 }
+	
 	
 	
 			
 	function allergyPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
-		allergyPercent = (allergy_count/11.0)*100.0;
+		allergyPercent = (allergy_count/total_count)*100.0;
 	
 	}
 		
 	function coldPercent(){   // This function does the same as the one above it, but it creates a percentage for cold rather than allergy.
-		coldPercent = (cold_count/11.0)*100.0;
+		coldPercent = (cold_count/total_count)*100.0;
 	
 	}	
 	
 	function fluPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
-		fluPercent = (flu_count/11.0)*100.0;
+		fluPercent = (flu_count/total_count)*100.0;
 	
 	}
 	
 	function covidPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
-		covidPercent = (covid_count/11.0)*100.0;
+		covidPercent = (covid_count/total_count)*100.0;
 	
 	}
 	
