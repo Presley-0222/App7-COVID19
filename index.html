@@ -351,7 +351,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">    <!--This creates a section seperate fom the header, a "content" section -->
 		<!--This is the result! -->
-		<a onclick= "showResults();"class="w3-btn w3-black">Click to get Results</a>   <!--Creates a button called "Results" that once clicked will give you the percentage chance you have a cold or its allergies based o your answers to the previous questions-->
+		<a onclick= "showResults(); google.charts.setOnLoadCallback(drawChart);"class="w3-btn w3-black">Click to get Results</a>   <!--Creates a button called "Results" that once clicked will give you the percentage chance you have a cold or its allergies based o your answers to the previous questions-->
 		<p id="results">Results Here</p>   <!--This is where the results from our earlier function are displayed -->
 		<br>
 		<br>
@@ -363,7 +363,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<script type="text/javascript">
 	// Load google charts
 		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(drawChart);
+		//google.charts.setOnLoadCallback(drawChart);
 
 	// Draw the chart and set the chart values
 	function drawChart() {
