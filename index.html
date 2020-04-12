@@ -20,12 +20,13 @@ Brief Description of Goal of Code:
  The goal of the code is to create a functioning web-based app that gives users insight into their medical condition by using a series of questions to calculate the chance the user has a cold, allergies, the flu, or COVID-19.
  
 Known Issues:
-
+There are no obvious issues that I can note.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
+<!-- below, until <script>, is important information that is documented, but will not be displayed on the page-->	
    <head> 
       <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,73 +54,73 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 
         function allergyAdd(point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with allegies) to the total that is recorded.
-            switch (point){
+            switch (point){  //adds multiple "branches" to the function so I don't have to make as many individuals functions to accomplish the same task.
 		    case 1:
-			allergy_count = allergy_count + 1.0;   //Adds 1 to allergy count total if symptom is common in allergies.
-			    break;
+			allergy_count = allergy_count + 1.0;   //Adds 1 to allergy count total if symptom is "common" in allergies (according to the aafa symptoms sheet).
+			    break;  //keeps each case seperated and from running more than one case when you call on one.
 		    case 0.75:
 			allergy_count = allergy_count + 0.75;  //Adds 0.75 to allergy count total if symptom is rare and the answer to the question is no.
 			    break;
 		    case 0.5:
-			allergy_count = allergy_count + 0.5;  //Adds 0.5 to allergy count total if symptom is labeled as "sometimes" in its frequency in allergies.
+			allergy_count = allergy_count + 0.5;  //Adds 0.5 to allergy count total if symptom is labeled as "sometimes" (aafa sheet) in its frequency in allergies.
 			    break;
 		    case 0.25:
-			allergy_count = allergy_count + 0.25;  //Adds 0.25 to allergy count total if symptom is labeled as "rare" or "sometimes-usally mild".
+			allergy_count = allergy_count + 0.25;  //Adds 0.25 to allergy count total if symptom is labeled as "rare" on the aafa symptoms sheet.
 			    break;
 	    }
         }	     
 
-        function coldAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-           switch (point){
+        function coldAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses. Every time someone selects a cold option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with the cold) to the total that is recorded.
+           switch (point){  // creates multiple branches for the singular function.
 		    case 1:
-			cold_count = cold_count + 1.0;
-			    break;
+			cold_count = cold_count + 1.0;  //Adds 1 to cold count total if symptom is "common" in colds
+			    break;   //keeps each case seperated and from running more than one case when you call on one.
 		   case 0.75:
-			cold_count = cold_count + 0.75;
+			cold_count = cold_count + 0.75;  //Adds 0.75 to cold count total if symptom if rare and the answer to the question is no.
 			    break;
 		    case 0.5:
-			cold_count = cold_count + 0.5;
+			cold_count = cold_count + 0.5;  //Adds 0.5 to cold count total if symptom is labeled as "sometimes" in its frequency in colds.
 			    break;
 		    case 0.25:
-			cold_count = cold_count + 0.25;
+			cold_count = cold_count + 0.25;  //Adds 0.25 to cold count total if symptom is labeled as "rare" on the aafa symptoms sheet.
 			    break;
 	    }
         }
 	
-	function fluAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            switch (point){
+	function fluAdd(point){   // This function is used to record the count of symptoms that indicate the flu from the users button responses. Every time someone selects a flu option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with the flu) to the total that is recorded.
+            switch (point){  //Provides branching for function
 		    case 1:
-			flu_count = flu_count + 1.0;
-			    break;
+			flu_count = flu_count + 1.0; //Adds 1 to flu count ("common" symptoms)
+			    break;   //keeps each case seperated and from running more than one case when you call on one.
 		    case 0.75:
-			flu_count = flu_count + 0.75;
+			flu_count = flu_count + 0.75;  //Adds 0.75 to flu count ("Rare" symptoms and selected no)
 			    break;
 		    case 0.5:
-			flu_count = flu_count + 0.5;
+			flu_count = flu_count + 0.5;  //Adds 0.5 to flu count ("sometimes" symptoms)
 			    break;
 		    case 0.25:
-			flu_count = flu_count + 0.25;
+			flu_count = flu_count + 0.25;  //Adds 0.25 to flu count ("rare" symptoms)
 			    break;
 	    }
         }
 	
-	function covidAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            switch (point){
+	function covidAdd(point){   // This function is used to record the count of symptoms that indicate COVID-19 from the users button responses. Every time someone selects a COVID-19 option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with COVID-19) to the total that is recorded.
+            switch (point){  //Creates branches for function
 		    case 1:
-			covid_count = covid_count + 1.0;
-			    break;
+			covid_count = covid_count + 1.0;  //Adds 1 to covid count("common" symptoms)
+			    break;   //keeps each case seperated and from running more than one case when you call on one.
 		    case 0.75:
-			covid_count = covid_count + 0.75;
+			covid_count = covid_count + 0.75;  //Adds 0.75 to covid count ("Rare" symptoms and selected no)
 			    break;
 		    case 0.5:
-			covid_count = covid_count + 0.5;
+			covid_count = covid_count + 0.5;  //Adds 0.5 to covid count ("sometimes" symptoms)
 			    break;
 		    case 0.25:
-			covid_count = covid_count + 0.25;
+			covid_count = covid_count + 0.25;  //Adds 0.25 to covid count ("rare" symptoms)
 			    break;
 	    }	
         }
-	
+	//The function below adds all the counts together of the illnesses to give us a total value.
 	 function totalAdd(){
 		 total_count = (allergy_count + flu_count + covid_count + cold_count);
 		 
@@ -128,30 +129,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 			
-	function allergyPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
+	function allergyPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of the allergy symptoms by the total count and then multiplying by 100.0.
 		allergyPercent = (allergy_count/total_count)*100.0;
 	
 	}
 		
-	function coldPercent(){   // This function does the same as the one above it, but it creates a percentage for cold rather than allergy.
+	function coldPercent(){   // with this functions, we can calculate the percentage of cold by dividing the count of the cold symtom values by the total count and then multiplying by 100.0.
 		coldPercent = (cold_count/total_count)*100.0;
 	
 	}	
 	
-	function fluPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
+	function fluPercent(){   // with this functions, we can calculate the percentage of the flu by dividing the count of the flu symptoms by the total count and then multiplying by 100.0.
 		fluPercent = (flu_count/total_count)*100.0;
 	
 	}
 	
-	function covidPercent(){   // with this functions, we can calculate the percentage of allergy by dividing the count of each variable by seven and then multiplying by 100.
+	function covidPercent(){   // with this functions, we can calculate the percentage of COVID-19 by dividing the count of the covid symptoms by the total count and then multiplying by 100.0.
 		covidPercent = (covid_count/total_count)*100.0;
 	
 	}
 	
 	
 			
-	function showResults(){  // This function displays the percent likelihood  and the percent allergy.
-		totalAdd();
+	function showResults(){  // This function displays the percent likelihood cold, allergy, flu, and COVID-19.
+		totalAdd();  //It is important that this function is here in the showResults function above the Percent functions because the total must be added before the percent functions can use that value to divide with.
 		coldPercent();
 		allergyPercent();
 		fluPercent();
@@ -159,7 +160,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 		var resultText = document.getElementById("results");
 	resultText.innerHTML = "Percent allergy = " + allergyPercent + "%" + "<br> Percent cold = " + coldPercent + "%" + "<br> Percent COVID-19 = " + covidPercent + "%" + "<br> Percent flu = " + fluPercent + "%";
-		//The above line creates the words "Percent allergy =" and then gives the percent generated from the allergyPercent function and a percent sign, then there is a page break, and then the line "Percent cold =" with the percent generated from the coldPercent function and a percent sign.
+		//The above line creates the words "Percent allergy =" and then gives the percent generated from the allergyPercent function and a percent sign, then there is a page break, and then the line "Percent cold =" with the percent generated from the coldPercent function and a percent sign (and so on for COVID-19 and the flu)
 	}
 // From the <style> marker to the </style> marker in the below section, this data creates the appearance and dimensions for the page.
   </script>
@@ -275,8 +276,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">     <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Do you have a sore throat?</p>     <!--This adds the question "Is the weather warm or chilly?" to the context section -->
-		<a href="#seven" onclick="coldAdd(1); allergyAdd(0.25); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
-		<a href="#seven" onclick="allergyAdd(0.25); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
+		<a href="#seven" onclick="coldAdd(1); allergyAdd(0.50); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called"Chilly" that counts towards cold when clicked-->
+		<a href="#seven" onclick="allergyAdd(0.50); covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>   <!--Creates a button called "Warm" that counts towards allergy when clicked-->
 		
 	</div>
 </div>	
@@ -338,8 +339,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">      <!--This creates a section seperate fom the header, a "content" section -->
 		<p>Are you experiencing diarrhea?</p>     <!--This adds the question "Did your symptoms develop fast or slow?" to the context section -->
 		<a href="#twelve" onclick=" covidAdd(0.5);" class="w3-btn w3-black w3-round">Yes</a>   <!--Creates a button called "Fast" that counts towards allergy when clicked-->
-		<a href="#twelve" onclick="coldAdd(1); allergyAdd(1);covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
 		<a href="#twelve" onclick="fluAdd(0.5);" class="w3-btn w3-black w3-round">Yes (and the one sick is a child)</a>
+		<a href="#twelve" onclick="coldAdd(1); allergyAdd(1);covidAdd(0.5); fluAdd(0.5);" class="w3-btn w3-black w3-round">No</a>
 	</div>
 </div>	
 			
