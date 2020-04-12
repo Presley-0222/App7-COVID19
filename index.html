@@ -17,10 +17,11 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
- The goal of the code is to create a functioning web-based app that gives users insight into their medical condition by using a series of questions to calculate the chance the user has a cold or if it's allergies.
+ The goal of the code is to create a functioning web-based app that gives users insight into their medical condition by using a series of questions to calculate the chance the user has a cold, allergies, the flu, or COVID-19.
  
 Known Issues:
- The buttons for answer choices to each question do not change color (become darker) when selected, so the user might click them more than once out of confusion. This can mess with the final percentage score. (I put a line of text to warn users to only click button once, but there is still the possibility of error)
+
+
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -51,35 +52,35 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var total = 11;   //These are the variables to calculate the count and the percentages in the following functions.
 	
 
-        function allergyAdd(point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
+        function allergyAdd(point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1, 0.75, 0.5, or 0.25 (depending on the likelihood of having that symptom with allegies) to the total that is recorded.
             switch (point){
-		    case "1":
-			allergy_count = allergy_count + 1.0;
+		    case 1:
+			allergy_count = allergy_count + 1.0;   //Adds 1 to allergy count total if symptom is common in allergies.
 			    break;
-		    case "0.75":
-			allergy_count = allergy_count + 0.75;
+		    case 0.75:
+			allergy_count = allergy_count + 0.75;  //Adds 0.75 to allergy count total if symptom is rare and the answer to the question is no.
 			    break;
-		    case "0.5":
-			allergy_count = allery_count + 0.5;
+		    case 0.5:
+			allergy_count = allergy_count + 0.5;  //Adds 0.5 to allergy count total if symptom is labeled as "sometimes" in its frequency in allergies.
 			    break;
-		    case "0.25":
-			allergy_count = allergy_count + 0.25;
+		    case 0.25:
+			allergy_count = allergy_count + 0.25;  //Adds 0.25 to allergy count total if symptom is labeled as "rare" or "sometimes-usally mild".
 			    break;
 	    }
         }	     
 
         function coldAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
            switch (point){
-		    case "1":
+		    case 1:
 			cold_count = cold_count + 1.0;
 			    break;
-		   case "0.75":
+		   case 0.75:
 			cold_count = cold_count + 0.75;
 			    break;
-		    case "0.5":
+		    case 0.5:
 			cold_count = cold_count + 0.5;
 			    break;
-		    case "0.25":
+		    case 0.25:
 			cold_count = cold_count + 0.25;
 			    break;
 	    }
@@ -87,16 +88,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	function fluAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
             switch (point){
-		    case "1":
+		    case 1:
 			flu_count = flu_count + 1.0;
 			    break;
-		    case "0.75":
+		    case 0.75:
 			flu_count = flu_count + 0.75;
 			    break;
-		    case "0.5":
+		    case 0.5:
 			flu_count = flu_count + 0.5;
 			    break;
-		    case "0.25":
+		    case 0.25:
 			flu_count = flu_count + 0.25;
 			    break;
 	    }
@@ -104,16 +105,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	function covidAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
             switch (point){
-		    case "1":
+		    case 1:
 			covid_count = covid_count + 1.0;
 			    break;
-		    case "0.75":
+		    case 0.75:
 			covid_count = covid_count + 0.75;
 			    break;
-		    case "0.5":
+		    case 0.5:
 			covid_count = covid_count + 0.5;
 			    break;
-		    case "0.25":
+		    case 0.25:
 			covid_count = covid_count + 0.25;
 			    break;
 	    }	
