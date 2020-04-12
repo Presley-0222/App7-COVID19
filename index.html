@@ -51,8 +51,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var total = 11;   //These are the variables to calculate the count and the percentages in the following functions.
 	
 
-        function allergyAdd(var point1){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
-            switch (point1){
+        function allergyAdd(point){   // This function is used to record the count of symptoms that indicate an allergy from the users button responses. Every time someone selects an allergy option, this function is used to add 1 to the total that is recorded.
+            switch (point){
 		    case "1":
 			allergy_count = allergy_count + 1.0;
 			    break;
@@ -68,8 +68,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    }
         }	     
 
-        function coldAdd(var point2){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-           switch (point2){
+        function coldAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+           switch (point){
 		    case "1":
 			cold_count = cold_count + 1.0;
 			    break;
@@ -85,8 +85,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    }
         }
 	
-	function fluAdd(var point3){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            switch (point3){
+	function fluAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            switch (point){
 		    case "1":
 			flu_count = flu_count + 1.0;
 			    break;
@@ -102,8 +102,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	    }
         }
 	
-	function covidAdd(var point4){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
-            switch (point4){
+	function covidAdd(point){   // This function is used to record the count of symptoms that indicate a cold from the users button responses.
+            switch (point){
 		    case "1":
 			covid_count = covid_count + 1.0;
 			    break;
@@ -144,8 +144,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 			
-	function showResults(){  // This function displays the percent cold and the percent allergy.
-		10
+	function showResults(){  // This function displays the percent likelihood  and the percent allergy.
+		coldPercent();
 		allergyPercent();
 		fluPercent();
 		covidPercent();
